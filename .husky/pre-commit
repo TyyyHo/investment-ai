@@ -5,11 +5,13 @@ pnpm lint:check || exit 1
 
 # Run related tests for staged source files if tests exist
 STAGED_SRC_FILES=$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx|js|jsx)$' || true)
-HAS_ANY_TESTS=$(git ls-files -co --exclude-standard | grep -E '(__tests__/.*|\.(test|spec)\.[jt]sx?)$' | wc -l | tr -d ' ')
+# Look for any test files (tracked or untracked)
+HAS_ANY_TESTS=$(git ls-files --cached --others --exclude-standard | grep -E '(__tests__/.*|\.(test|spec)\.[jt]sx?)$' | wc -l | tr -d ' ')
 
 if [ -n "$STAGED_SRC_FILES" ] && [ "$HAS_ANY_TESTS" != "0" ]; then
   echo "Running related tests..."
-  pnpm test -- --bail --passWithNoTests --findRelatedTests $STAGED_SRC_FILES || exit 1
+  # Important: do NOT pass a standalone "--" to jest; it treats following args as patterns.
+  pnpm test --bail --passWithNoTests --findRelatedTests $STAGED_SRC_FILES || exit 1
 else
   echo "Skipping related tests (no staged source files or no tests present)."
 fi
