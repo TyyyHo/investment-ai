@@ -19,21 +19,21 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="p-4">
-      <Card className="w-full max-w-md bg-white/90 border-slate-200 backdrop-blur-sm shadow-xl">
+    <div className="min-w-120 p-4">
+      <Card className="w-full max-w-md border-slate-200 bg-white/60 shadow-xl backdrop-blur-sm">
         <CardContent className="p-8">
           {/* Logo */}
-          <div className="flex justify-center mb-6">
+          <div className="mb-6 flex justify-center">
             <Image src="/images/logo.png" alt="Logo" width={160} height={160} />
           </div>
 
           {/* Brand */}
-          <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-yellow-600 tracking-wider mb-1">
+          <div className="mb-8 text-center">
+            <h1 className="mb-1 text-2xl font-bold tracking-wider text-yellow-600">
               GRAND EMPIRE
             </h1>
             {/* <p className="text-sm text-yellow-600/80 mb-3">Beyond Grand</p> */}
-            <p className="text-slate-800 text-base mb-2">AI投行機器人</p>
+            <p className="mb-2 text-base text-slate-800">AI投行機器人</p>
           </div>
 
           {/* Login Form */}
@@ -48,7 +48,7 @@ export default function LoginPage() {
                 placeholder="請輸入帳號"
                 value={username}
                 onChange={e => setUsername(e.target.value)}
-                className="bg-slate-50 border-slate-300 text-slate-900 placeholder:text-slate-500 focus:border-yellow-500 focus:ring-yellow-500/20"
+                className="border-slate-300 bg-slate-50 text-slate-900 placeholder:text-slate-500 focus:border-yellow-500 focus:ring-yellow-500/20"
                 required
               />
             </div>
@@ -63,14 +63,14 @@ export default function LoginPage() {
                 placeholder="請輸入密碼"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
-                className="bg-slate-50 border-slate-300 text-slate-900 placeholder:text-slate-500 focus:border-yellow-500 focus:ring-yellow-500/20"
+                className="border-slate-300 bg-slate-50 text-slate-900 placeholder:text-slate-500 focus:border-yellow-500 focus:ring-yellow-500/20"
                 required
               />
             </div>
 
             <Button
               type="submit"
-              className="w-full bg-gradient-to-r from-cyan-500 to-orange-500 hover:from-cyan-600 hover:to-orange-600 text-white font-medium py-3 transition-all duration-200"
+              className="w-full bg-gradient-to-r from-cyan-500 to-orange-500 py-3 font-medium text-white transition-all duration-200 hover:from-cyan-600 hover:to-orange-600"
             >
               <span className="mr-2">→</span>
               登入系統
@@ -79,7 +79,7 @@ export default function LoginPage() {
             <div className="text-center">
               <a
                 href="#"
-                className="text-cyan-600 hover:text-cyan-700 text-sm transition-colors"
+                className="text-sm text-cyan-600 transition-colors hover:text-cyan-700"
               >
                 忘記密碼？
               </a>
