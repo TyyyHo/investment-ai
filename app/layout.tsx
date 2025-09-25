@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Providers from "./providers";
 import { cn } from "@/lib/utils";
+import Backgroud from "@/components/backgroud";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,9 +32,10 @@ export default function RootLayout({
           geistSans.variable,
           geistMono.variable,
           "antialiased",
-          "min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-gray-100 flex items-center justify-center"
+          "relative min-h-screen min-w-screen bg-gradient-to-br from-[#06000F] via-[#06000fd6] to-[#06000F]"
         )}
       >
+        <Backgroud />
         <Providers>{children}</Providers>
       </body>
     </html>
