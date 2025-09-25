@@ -4,7 +4,7 @@ import Prism from "@/components/prism";
 
 export default function Backgroud() {
   return (
-    <div className="fixed inset-0">
+    <div className="fixed inset-0 -z-1">
       <Prism
         animationType="rotate"
         timeScale={0.2}
