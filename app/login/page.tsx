@@ -32,7 +32,7 @@ export default function Login() {
             <h1 className="text-2xl font-bold text-yellow-600 tracking-wider mb-1">
               GRAND EMPIRE
             </h1>
-            <p className="text-sm text-yellow-600/80 mb-3">Beyond Grand</p>
+            {/* <p className="text-sm text-yellow-600/80 mb-3">Beyond Grand</p> */}
             <p className="text-slate-800 text-base mb-2">AI投行機器人</p>
           </div>
 
