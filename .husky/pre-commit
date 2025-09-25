@@ -1,5 +1,10 @@
-# Run type checking
-pnpm type-check
 
-# Run lint-staged for linting and formatting
-pnpm lint:check
+# Type check and lint
+pnpm type-check || exit 1
+pnpm lint:check || exit 1
+
+# Run related tests for staged files (fast feedback)
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR)
+if [ -n "$STAGED_FILES" ]; then
+  pnpm test -- --bail --passWithNoTests --findRelatedTests $STAGED_FILES || exit 1
+fi

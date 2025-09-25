@@ -1,0 +1,5 @@
+# Block pushes if types, lint, or tests fail
+pnpm type-check || exit 1
+pnpm lint:check || exit 1
+pnpm test || exit 1
+
