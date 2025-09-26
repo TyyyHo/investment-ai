@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "application": "應用",
+    "home": "首頁",
+    "guide": "指南",
+    "filesSearch": "檔案搜尋",
+    "settings": "設定"
+  },
+  "request": {
+    "title": "請求",
+    "titleLabel": "標題",
+    "email": "電子郵件",
+    "category": "分類",
+    "details": "詳細內容",
+    "submit": "送出",
+    "reset": "重設"
+  }
+}

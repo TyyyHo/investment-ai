@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "application": "应用",
+    "home": "首页",
+    "guide": "指南",
+    "filesSearch": "文件搜索",
+    "settings": "设置"
+  },
+  "request": {
+    "title": "请求",
+    "titleLabel": "标题",
+    "email": "邮箱",
+    "category": "分类",
+    "details": "详情",
+    "submit": "提交",
+    "reset": "重置"
+  }
+}
