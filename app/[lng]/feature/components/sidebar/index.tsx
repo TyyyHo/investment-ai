@@ -9,7 +9,6 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
@@ -62,7 +61,6 @@ export default function AppSidebar() {
       {/* <SidebarHeader /> */}
       <SidebarContent className="text-white">
         <SidebarGroup>
-          <SidebarGroupLabel>{t("nav.application")}</SidebarGroupLabel>
           <SidebarMenu>
             {anchors.map(anchor => (
               <SidebarMenuItem key={anchor.id}>
@@ -78,7 +76,12 @@ export default function AppSidebar() {
                     )}
                   >
                     <anchor.icon />
-                    <p className="group-data-[collapsible=icon]:hidden">
+                    <p
+                      className={cn(
+                        open ? "" : "opacity-0",
+                        "transition-all duration-100 ease-in"
+                      )}
+                    >
                       {t(`nav.${anchor.id}`)}
                     </p>
                   </Link>
