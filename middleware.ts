@@ -2,8 +2,8 @@ import { NextRequest } from "next/server";
 import createMiddleware from "next-intl/middleware";
 
 const intlMiddleware = createMiddleware({
-  locales: ["zh-TW", "zh-CN", "en-US"],
-  defaultLocale: "zh-TW",
+  locales: ["zh-hant", "zh-hans", "en"],
+  defaultLocale: "zh-hant",
   localePrefix: "as-needed",
   localeDetection: true,
 });
