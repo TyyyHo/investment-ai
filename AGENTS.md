@@ -3,7 +3,8 @@
 ## Development Principles
 
 - Always discuss with me before making any changes to the code.
-- Always explain the reason the impact of the change when making a big or complex change.
+- Always explain the reason the impact of the change when making a big or complex chang
+- Never modify the part of the code that is not related to the current task, if you think it is necessary, please discuss with me.
 
 ## Project Structure & Module Organization
 
