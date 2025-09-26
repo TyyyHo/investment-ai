@@ -53,14 +53,10 @@ export default function AppSidebar() {
   const { open, toggleSidebar } = useSidebar();
 
   return (
-    <Sidebar
-      variant="floating"
-      collapsible="icon"
-      className="bg-transparent ring-white"
-    >
+    <Sidebar variant="floating" collapsible="icon">
       {/* <SidebarHeader /> */}
-      <SidebarContent className="bg-transparent text-white">
-        <SidebarGroup className="">
+      <SidebarContent className="text-white">
+        <SidebarGroup>
           <SidebarMenu>
             {anchors.map(anchor => (
               <SidebarMenuItem key={anchor.text}>
@@ -75,10 +71,8 @@ export default function AppSidebar() {
                       anchor.disabled && "cursor-not-allowed opacity-50"
                     )}
                   >
-                    <anchor.icon className="" />
-                    <span className="group-data-[collapsible=icon]:hidden">
-                      {anchor.text}
-                    </span>
+                    <anchor.icon />
+                    <p>{anchor.text}</p>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>
