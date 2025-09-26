@@ -1,0 +1,18 @@
+{
+  "nav": {
+    "application": "Application",
+    "home": "Home",
+    "guide": "Guide",
+    "filesSearch": "Files Search",
+    "settings": "Settings"
+  },
+  "request": {
+    "title": "Request",
+    "titleLabel": "Title",
+    "email": "Email",
+    "category": "Category",
+    "details": "Details",
+    "submit": "Submit",
+    "reset": "Reset"
+  }
+}
