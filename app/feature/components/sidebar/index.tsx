@@ -12,6 +12,7 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
+  useSidebar,
 } from "@/components/ui/sidebar";
 
 import {
@@ -19,6 +20,7 @@ import {
   AiOutlineSolution,
   AiOutlineFileSearch,
   AiOutlineSetting,
+  AiFillCaretRight,
 } from "react-icons/ai";
 
 const anchors = [
@@ -48,6 +50,8 @@ const anchors = [
 ];
 
 export default function AppSidebar() {
+  const { open, toggleSidebar } = useSidebar();
+
   return (
     <Sidebar
       variant="floating"
@@ -71,7 +75,7 @@ export default function AppSidebar() {
                       anchor.disabled && "cursor-not-allowed opacity-50"
                     )}
                   >
-                    <anchor.icon className="size-6" />
+                    <anchor.icon className="" />
                     <span className="group-data-[collapsible=icon]:hidden">
                       {anchor.text}
                     </span>
@@ -82,7 +86,20 @@ export default function AppSidebar() {
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>
-      <SidebarFooter />
+      <SidebarFooter>
+        <SidebarMenuButton
+          className="flex justify-end hover:bg-transparent"
+          onClick={toggleSidebar}
+        >
+          <AiFillCaretRight
+            className={cn(
+              "text-white transition-all duration-300 ease-in-out",
+              open ? "rotate-180" : ""
+            )}
+            style={{ width: "1.25rem", height: "1.25rem" }}
+          />
+        </SidebarMenuButton>
+      </SidebarFooter>
     </Sidebar>
   );
 }
