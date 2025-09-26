@@ -9,6 +9,7 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
+  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
@@ -22,28 +23,30 @@ import {
   AiOutlineSetting,
   AiFillCaretRight,
 } from "react-icons/ai";
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 
 const anchors = [
   {
+    id: "home",
     icon: AiOutlineHome,
-    text: "Home",
     href: "/",
   },
   {
+    id: "guide",
     icon: AiOutlineSolution,
-    text: "Guide",
     disabled: true,
     href: "/guide",
   },
   {
+    id: "filesSearch",
     icon: AiOutlineFileSearch,
-    text: "Files Search",
     disabled: true,
     href: "/files-search",
   },
   {
+    id: "settings",
     icon: AiOutlineSetting,
-    text: "Settings",
     disabled: true,
     href: "/settings",
   },
@@ -51,28 +54,33 @@ const anchors = [
 
 export default function AppSidebar() {
   const { open, toggleSidebar } = useSidebar();
+  const t = useTranslations();
+  const { lng } = useParams<{ lng: string }>();
 
   return (
     <Sidebar variant="floating" collapsible="icon">
       {/* <SidebarHeader /> */}
       <SidebarContent className="text-white">
         <SidebarGroup>
+          <SidebarGroupLabel>{t("nav.application")}</SidebarGroupLabel>
           <SidebarMenu>
             {anchors.map(anchor => (
-              <SidebarMenuItem key={anchor.text}>
+              <SidebarMenuItem key={anchor.id}>
                 <SidebarMenuButton
                   asChild
-                  tooltip={anchor.text}
+                  tooltip={t(`nav.${anchor.id}`)}
                   aria-disabled={anchor.disabled}
                 >
                   <Link
-                    href={anchor.disabled ? "" : anchor.href}
+                    href={anchor.disabled ? "" : `/${lng}${anchor.href}`}
                     className={cn(
                       anchor.disabled && "cursor-not-allowed opacity-50"
                     )}
                   >
                     <anchor.icon />
-                    <p>{anchor.text}</p>
+                    <p className="group-data-[collapsible=icon]:hidden">
+                      {t(`nav.${anchor.id}`)}
+                    </p>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>

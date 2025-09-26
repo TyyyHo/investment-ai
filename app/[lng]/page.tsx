@@ -1,8 +1,8 @@
 import { redirect } from "next/navigation";
 
-export default function Home() {
-  redirect("/feature/request");
+type PageProps = { params: { lng: string } };
 
-  // TODO: check if user is logged in
-  redirect("/login");
+export default function Home({ params }: PageProps) {
+  // Default to Request page within the current locale
+  redirect(`/${params.lng}/feature/request`);
 }
