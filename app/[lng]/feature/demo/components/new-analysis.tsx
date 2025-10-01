@@ -14,7 +14,9 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { StockCategories } from "../instant";
+import { AiOutlinePaperClip } from "react-icons/ai";
 
 const defaultReportCategories = [
   "trend_analysis",
@@ -24,9 +26,14 @@ const defaultReportCategories = [
   "risk_disclosure",
 ];
 
-export default function NewAnalysis() {
+type NewAnalysisProps = {
+  setStep: (step: number) => void;
+};
+
+export default function NewAnalysis({ setStep }: NewAnalysisProps) {
   const t = useTranslations("request");
   const t_lng = useTranslations("language");
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [reportCategories, setReportCategories] = useState(
     defaultReportCategories
@@ -38,6 +45,11 @@ export default function NewAnalysis() {
         ? [...new Set([...prev, value])]
         : prev.filter(v => v !== value)
     );
+  }
+
+  function handleAddFile() {
+    console.log("handleAddFile");
+    fileInputRef.current?.click();
   }
 
   return (
@@ -61,9 +73,11 @@ export default function NewAnalysis() {
                 <SelectValue placeholder={t("analysis_categoryPlaceholder")} />
               </SelectTrigger>
               <SelectContent className="bg-neutral-800 text-white">
-                <SelectItem value="M&A">{t("M&A")}</SelectItem>
-                <SelectItem value="IPO">{t("IPO")}</SelectItem>
-                <SelectItem value="bond_issue">{t("bond_issue")}</SelectItem>
+                {StockCategories.map(category => (
+                  <SelectItem key={category} value={category}>
+                    {category}
+                  </SelectItem>
+                ))}
               </SelectContent>
             </Select>
           </div>
@@ -115,12 +129,30 @@ export default function NewAnalysis() {
               placeholder={t("detailsPlaceholder")}
               className="text-white"
             />
+            <button
+              type="button"
+              className="flex items-center space-x-1 p-0"
+              onClick={handleAddFile}
+            >
+              <AiOutlinePaperClip className="size-4" />
+              <p className="text-xs">添加檔案</p>
+            </button>
+
+            <input
+              ref={fileInputRef}
+              type="file"
+              className="hidden"
+              accept=".pdf,.doc,.docx,.txt"
+              id="file"
+            />
           </div>
+
           <div className="flex justify-end gap-2 md:col-span-2">
             <Button
               type="reset"
               variant="outline"
               className="border-none bg-neutral-300 text-black"
+              onClick={() => setStep(2)}
             >
               {t("reset")}
             </Button>
