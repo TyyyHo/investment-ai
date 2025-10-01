@@ -13,6 +13,7 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   useSidebar,
+  SidebarHeader,
 } from "@/components/ui/sidebar";
 
 import {
@@ -24,6 +25,7 @@ import {
 } from "react-icons/ai";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
 const anchors = [
   {
@@ -64,7 +66,14 @@ export default function AppSidebar() {
 
   return (
     <Sidebar variant="floating" collapsible="icon">
-      {/* <SidebarHeader /> */}
+      <SidebarHeader
+        className={cn(
+          "flex items-center justify-center transition-all",
+          open ? "my-2" : "my-0"
+        )}
+      >
+        <Image src="/images/logo.png" alt="logo" width={150} height={100} />
+      </SidebarHeader>
       <SidebarContent className="text-white">
         <SidebarGroup>
           <SidebarMenu>
