@@ -92,6 +92,10 @@
   }
 }
 
+button {
+  cursor: pointer;
+}
+
 /* Hide scrollbars globally but preserve scrolling */
 * {
   scrollbar-width: none; /* Firefox */
