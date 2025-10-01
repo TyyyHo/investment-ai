@@ -21,7 +21,7 @@ const defaultReportCategories = [
   "financial_analysis",
   "valuation_analysis",
   "peer_comparison",
-  "regulatory_impact_analysis",
+  "risk_disclosure",
 ];
 
 export default function NewAnalysis() {
@@ -64,8 +64,6 @@ export default function NewAnalysis() {
                 <SelectItem value="M&A">{t("M&A")}</SelectItem>
                 <SelectItem value="IPO">{t("IPO")}</SelectItem>
                 <SelectItem value="bond_issue">{t("bond_issue")}</SelectItem>
-                <SelectItem value="financing">{t("financing")}</SelectItem>
-                <SelectItem value="other">{t("other")}</SelectItem>
               </SelectContent>
             </Select>
           </div>
