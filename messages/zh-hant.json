@@ -1,15 +1,22 @@
 {
+  "language": {
+    "zh-hant": "繁體中文",
+    "zh-hans": "簡體中文",
+    "en": "英文"
+  },
   "nav": {
     "application": "應用",
     "home": "首頁",
     "guide": "指南",
-    "filesSearch": "檔案搜尋",
-    "settings": "設定"
+    "ipo-analysis": "IPO分析",
+    "history": "分析報告資料庫",
+    "personal-settings": "個人設定",
+    "system-settings": "系統設定"
   },
   "request": {
-    "title": "新的分析",
+    "newAnalysis": "新增AI投資銀行分析報告",
     "target": "分析標的",
-    "targetPlaceholder": "請輸入分析標的名稱",
+    "targetPlaceholder": "請輸入分析標的代號或名稱",
     "analysis_category": "分析類別",
     "analysis_categoryPlaceholder": "請選擇分析類別",
     "M&A": "併購",
@@ -26,13 +33,12 @@
     "regulatory_impact_analysis": "法規分析",
     "report_language": "分析報告語言",
     "report_languagePlaceholder": "請選擇分析報告使用的語言",
-    "zh-hant": "繁體中文",
-    "zh-hans": "簡體中文",
-    "en": "英文",
     "details": "追加資訊",
     "detailsPlaceholder": "指定分析方向或補充更多資訊",
     "startAnalysis": "開始分析",
     "reset": "清空",
-    "additionalAnalysis": "追加分析"
+    "additionalAnalysis": "追加分析",
+    "previousInfo": "過往分析",
+    "analysisPreview": "AI投資銀行報告預覽"
   }
 }
