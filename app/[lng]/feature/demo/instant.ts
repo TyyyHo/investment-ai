@@ -1,11 +1,17 @@
-export const StockCategories = [
+export const defaultReportCategories = [
+  "trend_analysis",
+  "financial_analysis",
+  "valuation_analysis",
+  "peer_comparison",
+];
+
+export const stockCategories = [
   "電子零組件",
   "紡織",
   "汽車",
   "化學生醫",
   "金融",
   "鋼鐵",
-  "ETN",
   "航運",
   "電器電纜",
   "存託憑證",
@@ -23,6 +29,7 @@ export const StockCategories = [
   "受益證券",
   "居家生活",
   "ETF",
+  "ETN",
   "電子通路",
   "電機",
   "通信網路",
@@ -38,4 +45,4 @@ export const StockCategories = [
   "玻璃",
   "運動休閒",
   "其他",
-];
+] as const;

@@ -14,11 +14,14 @@
     "system-settings": "系統設定"
   },
   "request": {
-    "newAnalysis": "新增AI投資銀行分析報告",
+    "handle_industry_analysis": "進行行業分析",
+    "industry_analysis": "行業分析",
     "target": "分析標的",
     "targetPlaceholder": "請輸入分析標的代號或名稱",
     "analysis_category": "分析類別",
     "analysis_categoryPlaceholder": "請選擇分析類別",
+    "industry_category": "所屬產業",
+    "industry_categoryPlaceholder": "請選擇所屬產業",
     "M&A": "併購",
     "IPO": "IPO",
     "bond_issue": "債券發行",
@@ -29,8 +32,7 @@
     "trend_analysis": "行業趨勢分析",
     "financial_analysis": "行業財務分析",
     "valuation_analysis": "行業估值分析",
-    "peer_comparison": "行業競品比較",
-    "risk_disclosure": "風險揭露",
+    "peer_comparison": "同業比較",
     "report_language": "分析報告語言",
     "report_languagePlaceholder": "請選擇分析報告使用的語言",
     "details": "追加資訊",
@@ -39,6 +41,8 @@
     "reset": "清空",
     "additionalAnalysis": "追加分析",
     "previousInfo": "過往分析",
+    "enterpriseAnalysis": "企業分析",
+    "handle_enterprise_analysis": "進行企業分析",
     "analysisPreview": "AI投資銀行報告預覽"
   }
 }

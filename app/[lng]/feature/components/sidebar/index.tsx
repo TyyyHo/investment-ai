@@ -93,8 +93,8 @@ export default function AppSidebar() {
                     <anchor.icon />
                     <p
                       className={cn(
-                        open ? "" : "opacity-0",
-                        "transition-all duration-100 ease-in"
+                        "text-base font-semibold transition-all duration-100 ease-in",
+                        open ? "" : "opacity-0"
                       )}
                     >
                       {t(`nav.${anchor.id}`)}

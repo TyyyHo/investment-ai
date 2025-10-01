@@ -2,7 +2,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -12,18 +11,15 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Textarea } from "@/components/ui/textarea";
 import { useTranslations } from "next-intl";
-import { useRef, useState } from "react";
-import { StockCategories } from "../instant";
-import { AiOutlinePaperClip } from "react-icons/ai";
+import { useState } from "react";
+import { stockCategories } from "../instant";
 
 const defaultReportCategories = [
   "trend_analysis",
   "financial_analysis",
   "valuation_analysis",
   "peer_comparison",
-  "risk_disclosure",
 ];
 
 type NewAnalysisProps = {
@@ -33,7 +29,6 @@ type NewAnalysisProps = {
 export default function NewAnalysis({ setStep }: NewAnalysisProps) {
   const t = useTranslations("request");
   const t_lng = useTranslations("language");
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [reportCategories, setReportCategories] = useState(
     defaultReportCategories
@@ -47,45 +42,36 @@ export default function NewAnalysis({ setStep }: NewAnalysisProps) {
     );
   }
 
-  function handleAddFile() {
-    console.log("handleAddFile");
-    fileInputRef.current?.click();
-  }
-
   return (
     <Card className="border-white/60 bg-neutral-800/60 text-white backdrop-blur-md">
       <CardHeader>
-        <CardTitle className="text-xl">{t("newAnalysis")}</CardTitle>
+        <CardTitle className="text-xl">
+          {t("handle_industry_analysis")}
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <form className="grid gap-6" onSubmit={e => e.preventDefault()}>
-          {/* 分析標的 */}
-          <div className="flex flex-col gap-2">
-            <Label htmlFor="target">{t("target")}</Label>
-            <Input id="target" required placeholder={t("targetPlaceholder")} />
+          {/* 分析類別 */}
+          <div className="flex flex-col gap-2 md:col-span-2">
+            <Label htmlFor="category">{t("analysis_category")}</Label>
+            <h2 className="font-bold">{t("IPO")}</h2>
           </div>
 
           {/* 所屬產業 */}
           <div className="flex flex-col gap-2 md:col-span-2">
-            <Label htmlFor="category">{t("analysis_category")}</Label>
+            <Label htmlFor="category">{t("industry_category")}</Label>
             <Select required>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder={t("analysis_categoryPlaceholder")} />
+                <SelectValue placeholder={t("industry_categoryPlaceholder")} />
               </SelectTrigger>
               <SelectContent className="bg-neutral-800 text-white">
-                {StockCategories.map(category => (
+                {stockCategories.map(category => (
                   <SelectItem key={category} value={category}>
                     {category}
                   </SelectItem>
                 ))}
               </SelectContent>
             </Select>
-          </div>
-
-          {/* 分析類別 */}
-          <div className="flex flex-col gap-2 md:col-span-2">
-            <Label htmlFor="category">{t("analysis_category")}</Label>
-            <h2 className="font-bold">{t("IPO")}</h2>
           </div>
 
           {/* 報告類別（多選） */}
@@ -121,7 +107,7 @@ export default function NewAnalysis({ setStep }: NewAnalysisProps) {
           </div>
 
           {/* 追加資訊 */}
-          <div className="flex flex-col gap-2 md:col-span-2">
+          {/* <div className="flex flex-col gap-2 md:col-span-2">
             <Label htmlFor="details">{t("details")}</Label>
             <Textarea
               id="details"
@@ -145,18 +131,19 @@ export default function NewAnalysis({ setStep }: NewAnalysisProps) {
               accept=".pdf,.doc,.docx,.txt"
               id="file"
             />
-          </div>
+          </div> */}
 
           <div className="flex justify-end gap-2 md:col-span-2">
             <Button
               type="reset"
               variant="outline"
               className="border-none bg-neutral-300 text-black"
-              onClick={() => setStep(2)}
             >
               {t("reset")}
             </Button>
-            <Button type="submit">{t("startAnalysis")}</Button>
+            <Button type="button" onClick={() => setStep(2)}>
+              {t("startAnalysis")}
+            </Button>
           </div>
         </form>
       </CardContent>
