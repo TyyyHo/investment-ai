@@ -87,13 +87,14 @@ export default function AppSidebar() {
                   <Link
                     href={anchor.disabled ? "" : `/${lng}${anchor.href}`}
                     className={cn(
+                      "transition-all",
                       anchor.disabled && "cursor-not-allowed opacity-50"
                     )}
                   >
                     <anchor.icon />
                     <p
                       className={cn(
-                        "text-base font-semibold transition-all duration-100 ease-in",
+                        "text-base font-semibold",
                         open ? "" : "opacity-0"
                       )}
                     >
