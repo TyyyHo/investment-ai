@@ -8,12 +8,11 @@ import PreviousForm from "./components/previous-form";
 
 export default function DemoPage() {
   const [step, setStep] = useState(1);
-  console.log(setStep);
 
   return (
     <div className="flex size-full max-h-screen gap-4 overflow-hidden">
       <section className="max-h-screen flex-1 space-y-4 overflow-y-auto">
-        {step === 1 && <NewAnalysis />}
+        {step === 1 && <NewAnalysis setStep={setStep} />}
         {step === 2 && <PreviousForm />}
         {step === 3 && <AdditionalAnalysis />}
       </section>

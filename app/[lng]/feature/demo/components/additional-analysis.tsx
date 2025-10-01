@@ -49,7 +49,7 @@ export default function AdditionalAnalysis() {
           {/* 分析標的 */}
           <div className="flex flex-col gap-2">
             <Label htmlFor="target">{t("target")}</Label>
-            <h2 className="font-bold">2230 TSMC</h2>
+            <h2 className="font-bold">2330 TSMC</h2>
           </div>
 
           {/* 分析類別 */}
