@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const locales = ["zh-hant", "zh-hans", "en"] as const;
-type Locale = (typeof locales)[number];
-const defaultLocale: Locale = "zh-hant";
+type AvailableLocale = "zh-hant" | "zh-hans" | "en";
+const locales: AvailableLocale[] = ["zh-hant", "zh-hans", "en"] as const;
+const defaultLocale: AvailableLocale = "zh-hant" as const;
 
 function hasPathLocale(pathname: string): boolean {
   return locales.some(
@@ -10,11 +10,11 @@ function hasPathLocale(pathname: string): boolean {
   );
 }
 
-function getCookieLocale(request: NextRequest): Locale {
-  const cookie = request.cookies.get("NEXT_LOCALE")?.value || "";
-  return (locales as readonly string[]).includes(cookie)
-    ? (cookie as Locale)
-    : defaultLocale;
+function getCookieLocale(request: NextRequest): AvailableLocale {
+  const cookie = request.cookies.get("NEXT_LOCALE")?.value as
+    | AvailableLocale
+    | undefined;
+  return cookie && locales.includes(cookie) ? cookie : defaultLocale;
 }
 
 export function handleLanguageRedirect(
