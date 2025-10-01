@@ -25,6 +25,8 @@ const defaultReportCategories = [
 
 export default function AdditionalAnalysis() {
   const t = useTranslations("request");
+  const t_lng = useTranslations("language");
+
   const [reportCategories, setReportCategories] = useState(
     defaultReportCategories
   );
@@ -47,13 +49,13 @@ export default function AdditionalAnalysis() {
           {/* 分析標的 */}
           <div className="flex flex-col gap-2">
             <Label htmlFor="target">{t("target")}</Label>
-            <h2>2230 TSMC</h2>
+            <h2 className="font-bold">2230 TSMC</h2>
           </div>
 
           {/* 分析類別 */}
           <div className="flex flex-col gap-2 md:col-span-2">
             <Label htmlFor="category">{t("analysis_category")}</Label>
-            <h2>併購</h2>
+            <h2 className="font-bold">併購</h2>
           </div>
 
           {/* 報告類別（多選） */}
@@ -80,10 +82,10 @@ export default function AdditionalAnalysis() {
               <SelectTrigger className="w-full">
                 <SelectValue placeholder={t("report_languagePlaceholder")} />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="zh-hant">{t("zh-hant")}</SelectItem>
-                <SelectItem value="zh-hans">{t("zh-hans")}</SelectItem>
-                <SelectItem value="en">{t("en")}</SelectItem>
+              <SelectContent className="bg-neutral-800 text-white">
+                <SelectItem value="zh-hant">{t_lng("zh-hant")}</SelectItem>
+                <SelectItem value="zh-hans">{t_lng("zh-hans")}</SelectItem>
+                <SelectItem value="en">{t_lng("en")}</SelectItem>
               </SelectContent>
             </Select>
           </div>

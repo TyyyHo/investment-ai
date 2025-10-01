@@ -26,6 +26,8 @@ const defaultReportCategories = [
 
 export default function NewAnalysis() {
   const t = useTranslations("request");
+  const t_lng = useTranslations("language");
+
   const [reportCategories, setReportCategories] = useState(
     defaultReportCategories
   );
@@ -41,7 +43,7 @@ export default function NewAnalysis() {
   return (
     <Card className="border-white/60 bg-neutral-800/60 text-white backdrop-blur-md">
       <CardHeader>
-        <CardTitle className="text-xl">{t("title")}</CardTitle>
+        <CardTitle className="text-xl">{t("newAnalysis")}</CardTitle>
       </CardHeader>
       <CardContent>
         <form className="grid gap-6" onSubmit={e => e.preventDefault()}>
@@ -58,7 +60,7 @@ export default function NewAnalysis() {
               <SelectTrigger className="w-full">
                 <SelectValue placeholder={t("analysis_categoryPlaceholder")} />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-neutral-800 text-white">
                 <SelectItem value="M&A">{t("M&A")}</SelectItem>
                 <SelectItem value="IPO">{t("IPO")}</SelectItem>
                 <SelectItem value="bond_issue">{t("bond_issue")}</SelectItem>
@@ -79,7 +81,7 @@ export default function NewAnalysis() {
                     checked={reportCategories.includes(key)}
                     onCheckedChange={c => toggleCategory(key, c)}
                   />
-                  <span>{t(key)}</span>
+                  <p>{t(key)}</p>
                 </label>
               ))}
             </div>
@@ -92,10 +94,10 @@ export default function NewAnalysis() {
               <SelectTrigger className="w-full">
                 <SelectValue placeholder={t("report_languagePlaceholder")} />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="zh-hant">{t("zh-hant")}</SelectItem>
-                <SelectItem value="zh-hans">{t("zh-hans")}</SelectItem>
-                <SelectItem value="en">{t("en")}</SelectItem>
+              <SelectContent className="bg-neutral-800 text-white">
+                <SelectItem value="zh-hant">{t_lng("zh-hant")}</SelectItem>
+                <SelectItem value="zh-hans">{t_lng("zh-hans")}</SelectItem>
+                <SelectItem value="en">{t_lng("en")}</SelectItem>
               </SelectContent>
             </Select>
           </div>

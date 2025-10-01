@@ -27,27 +27,33 @@ import { useParams } from "next/navigation";
 
 const anchors = [
   {
-    id: "home",
+    id: "ipo-analysis",
     icon: AiOutlineHome,
-    href: "/",
+    href: "/feature/demo",
   },
+  // {
+  //   id: "guide",
+  //   icon: AiOutlineSolution,
+  //   disabled: true,
+  //   href: "/guide",
+  // },
   {
-    id: "guide",
-    icon: AiOutlineSolution,
-    disabled: true,
-    href: "/guide",
-  },
-  {
-    id: "filesSearch",
+    id: "history",
     icon: AiOutlineFileSearch,
     disabled: true,
-    href: "/files-search",
+    href: "/history",
   },
   {
-    id: "settings",
+    id: "personal-settings",
+    icon: AiOutlineSolution,
+    disabled: true,
+    href: "/personal-settings",
+  },
+  {
+    id: "system-settings",
     icon: AiOutlineSetting,
     disabled: true,
-    href: "/settings",
+    href: "/system-settings",
   },
 ];
 
