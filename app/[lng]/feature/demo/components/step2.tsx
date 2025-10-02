@@ -15,12 +15,14 @@ import {
 } from "@/components/ui/accordion";
 import EnterpriseAnalysis from "./enterpriseAnalysis";
 import { defaultReportCategories } from "../instant";
+import { reportType } from "../page";
 
 type Step2Props = {
   setStep: (step: number) => void;
+  setCurrentReport: (report: reportType) => void;
 };
 
-export default function Step2({ setStep }: Step2Props) {
+export default function Step2({ setStep, setCurrentReport }: Step2Props) {
   const { lng } = useParams<{ lng: string }>();
   const t = useTranslations("request");
   const tl = useTranslations("language");
@@ -68,7 +70,7 @@ export default function Step2({ setStep }: Step2Props) {
                     {/* 報告類別（as const） */}
                     <div className="flex flex-col gap-2 md:col-span-2">
                       <Label>{t("report_category")}</Label>
-                      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                      <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
                         {defaultReportCategories.map(key => (
                           <label key={key} className="flex items-center gap-2">
                             <Checkbox
@@ -96,7 +98,13 @@ export default function Step2({ setStep }: Step2Props) {
         </CardContent>
       </Card>
 
-      <EnterpriseAnalysis nextStep={3} handleStep={setStep} />
+      <EnterpriseAnalysis
+        nextStep={3}
+        handleStep={() => {
+          setStep(3);
+          setCurrentReport("price");
+        }}
+      />
     </>
   );
 }

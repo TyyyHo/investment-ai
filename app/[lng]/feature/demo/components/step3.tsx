@@ -14,15 +14,25 @@ import {
 import { useParams } from "next/navigation";
 import EnterpriseAnalysis from "./enterpriseAnalysis";
 import { defaultReportCategories } from "../instant";
+import { reportType } from "../page";
+import { CgAdd } from "react-icons/cg";
+import { cn } from "@/lib/utils";
 
 type Step3Props = {
   setStep: (step: number) => void;
+  currentReport: reportType;
+  setCurrentReport: (report: reportType) => void;
 };
 
-export default function Step3({ setStep }: Step3Props) {
+export default function Step3({
+  setStep,
+  currentReport,
+  setCurrentReport,
+}: Step3Props) {
   const { lng } = useParams<{ lng: string }>();
   const t = useTranslations("request");
   const tl = useTranslations("language");
+  const [wantAnalysis, setWantAnalysis] = useState(false);
   const [reportCategories, setReportCategories] = useState(
     defaultReportCategories
   );
@@ -37,7 +47,15 @@ export default function Step3({ setStep }: Step3Props) {
 
   return (
     <>
-      <Card className="border-white/60 bg-neutral-800/60 text-white backdrop-blur-md">
+      <Card
+        className={cn(
+          "bg-neutral-800/60 text-white backdrop-blur-md",
+          currentReport === "industry"
+            ? "border-2 border-orange-300"
+            : "border-white/60"
+        )}
+        onClick={() => setCurrentReport("industry")}
+      >
         <CardContent>
           <Accordion type="single" collapsible className="text-white">
             <AccordionItem value="item-1">
@@ -62,7 +80,7 @@ export default function Step3({ setStep }: Step3Props) {
                     {/* 報告類別（as const） */}
                     <div className="flex flex-col gap-2 md:col-span-2">
                       <Label>{t("report_category")}</Label>
-                      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                      <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
                         {defaultReportCategories.map(key => (
                           <label key={key} className="flex items-center gap-2">
                             <Checkbox
@@ -91,7 +109,15 @@ export default function Step3({ setStep }: Step3Props) {
       </Card>
 
       {/* 企業分析歷史紀錄 */}
-      <Card className="border-white/60 bg-neutral-800/60 text-white backdrop-blur-md">
+      <Card
+        className={cn(
+          "bg-neutral-800/60 text-white backdrop-blur-md",
+          currentReport === "price"
+            ? "border-2 border-orange-300"
+            : "border-white/60"
+        )}
+        onClick={() => setCurrentReport("price")}
+      >
         <CardContent>
           <Accordion
             type="single"
@@ -121,18 +147,15 @@ export default function Step3({ setStep }: Step3Props) {
                     {/* 報告類別（as const） */}
                     <div className="flex flex-col gap-2 md:col-span-2">
                       <Label>{t("report_category")}</Label>
-                      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-                        {defaultReportCategories.map(key => (
-                          <label key={key} className="flex items-center gap-2">
-                            <Checkbox
-                              id={`report-${key}`}
-                              checked={reportCategories.includes(key)}
-                              onCheckedChange={c => toggleCategory(key, c)}
-                              disabled
-                            />
-                            <p>{t(key)}</p>
-                          </label>
-                        ))}
+                      <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
+                        <label className="flex items-center gap-2">
+                          <Checkbox
+                            id={`report-valuation_report`}
+                            checked={true}
+                            disabled
+                          />
+                          <p>{t("valuation_report")}</p>
+                        </label>
                       </div>
                     </div>
 
@@ -149,7 +172,15 @@ export default function Step3({ setStep }: Step3Props) {
         </CardContent>
       </Card>
 
-      <EnterpriseAnalysis nextStep={3} handleStep={setStep} />
+      {wantAnalysis ? (
+        <EnterpriseAnalysis nextStep={3} handleStep={setStep} />
+      ) : (
+        <div className="grid h-12 w-full items-center justify-center">
+          <button onClick={() => setWantAnalysis(true)}>
+            <CgAdd className="size-6 text-white" />
+          </button>
+        </div>
+      )}
     </>
   );
 }

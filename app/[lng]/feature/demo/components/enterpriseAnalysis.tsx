@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
 import { AiOutlinePaperClip } from "react-icons/ai";
+import { Input } from "@/components/ui/input";
 
 type EnterpriseAnalysisProps = {
   nextStep: number;
@@ -33,7 +34,7 @@ export default function EnterpriseAnalysis({
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <form className="grid gap-6" onSubmit={e => e.preventDefault()}>
+        <form className="grid w-full gap-6" onSubmit={e => e.preventDefault()}>
           {/* 分析類別 */}
           <div className="flex flex-col gap-2 md:col-span-2">
             <Label htmlFor="category">{t("analysis_category")}</Label>
@@ -41,9 +42,13 @@ export default function EnterpriseAnalysis({
           </div>
 
           {/* 分析標的 */}
-          <div className="flex flex-col gap-2">
+          <div className="flex w-full flex-col gap-2">
             <Label htmlFor="target">{t("target")}</Label>
-            <h2 className="font-bold">{process.env.NEXT_PUBLIC_DEMO_TARGET}</h2>
+            <Input
+              id="target"
+              className="w-full"
+              defaultValue={process.env.NEXT_PUBLIC_DEMO_TARGET}
+            />
           </div>
 
           {/* 追加資訊 */}

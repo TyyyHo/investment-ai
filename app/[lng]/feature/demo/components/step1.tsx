@@ -95,7 +95,7 @@ export default function Step1({ setStep }: Step1Props) {
                 {/* 報告類別（多選） */}
                 <div className="flex flex-col gap-2 md:col-span-2">
                   <Label>{t("report_category")}</Label>
-                  <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <div className="grid grid-cols-1 gap-3 xl:grid-cols-2">
                     {defaultReportCategories.map(key => (
                       <label key={key} className="flex items-center gap-2">
                         <Checkbox
