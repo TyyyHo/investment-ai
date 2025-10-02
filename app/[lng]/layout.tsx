@@ -39,7 +39,8 @@ export default async function RootLayout({
           geistSans.variable,
           geistMono.variable,
           "antialiased",
-          "relative min-h-screen min-w-screen bg-gradient-to-br from-[#06000F] via-[#06000fd6] to-[#06000F]"
+          "relative min-h-screen min-w-screen",
+          "bg-[radial-gradient(ellipse_at_top,var(--color-blue-light),var(--color-blue-mid)_40%,var(--color-blue-darkest)_100%)]"
         )}
       >
         <Backgroud />

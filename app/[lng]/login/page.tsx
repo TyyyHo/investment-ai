@@ -7,33 +7,38 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent } from "@/components/ui/card";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle login logic here
     console.log("Login attempt:", { username, password });
+    if (username && password) {
+      router.push("/feature/demo");
+    }
   };
 
   return (
-    <div className="min-w-120 p-4">
-      <Card className="w-full max-w-md border-slate-200 bg-white/60 shadow-xl backdrop-blur-sm">
-        <CardContent className="p-8">
+    <div className="flex h-screen w-screen items-center justify-center">
+      <Card className="w-full max-w-sm min-w-64 border-slate-200 bg-white/60 py-4 shadow-xl backdrop-blur-sm">
+        <CardContent className="px-8">
           {/* Logo */}
-          <div className="mb-6 flex justify-center">
+          <div className="mb-4 flex justify-center">
             <Image src="/images/logo.png" alt="Logo" width={160} height={160} />
           </div>
 
           {/* Brand */}
-          <div className="mb-8 text-center">
+          <div className="mb-6 text-center">
             <h1 className="mb-1 text-2xl font-bold tracking-wider text-yellow-600">
               GRAND EMPIRE
             </h1>
             {/* <p className="text-sm text-yellow-600/80 mb-3">Beyond Grand</p> */}
-            <p className="mb-2 text-base text-slate-800">AI投行機器人</p>
+            <p className="mb-2 text-base text-slate-800">AI 投資銀行機器人</p>
           </div>
 
           {/* Login Form */}
@@ -70,7 +75,7 @@ export default function LoginPage() {
 
             <Button
               type="submit"
-              className="w-full bg-gradient-to-r from-cyan-500 to-orange-500 py-3 font-medium text-white transition-all duration-200 hover:from-cyan-600 hover:to-orange-600"
+              className="w-full bg-neutral-900/80 py-3 font-medium text-white transition-all duration-200 hover:from-cyan-600 hover:to-orange-600"
             >
               <span className="mr-2">→</span>
               登入系統

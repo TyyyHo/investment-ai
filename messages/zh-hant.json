@@ -1,18 +1,51 @@
 {
+  "language": {
+    "zh-hant": "繁體中文",
+    "zh-hans": "簡體中文",
+    "en": "英文"
+  },
   "nav": {
     "application": "應用",
     "home": "首頁",
     "guide": "指南",
-    "filesSearch": "檔案搜尋",
-    "settings": "設定"
+    "ipo-analysis": "IPO分析",
+    "M&A-analysis": "併購分析",
+    "financing-analysis": "融資分析",
+    "history": "分析報告資料庫",
+    "custom-analysis": "客製化深度分析",
+    "system-settings": "系統設定"
   },
   "request": {
-    "title": "請求",
-    "titleLabel": "標題",
-    "email": "電子郵件",
-    "category": "分類",
-    "details": "詳細內容",
-    "submit": "送出",
-    "reset": "重設"
+    "handle_industry_analysis": "進行行業分析",
+    "industry_analysis": "行業分析",
+    "target": "分析標的",
+    "targetPlaceholder": "請輸入分析標的代號或名稱",
+    "analysis_category": "分析類別",
+    "analysis_categoryPlaceholder": "請選擇分析類別",
+    "industry_category": "所屬產業",
+    "industry_categoryPlaceholder": "請選擇所屬產業",
+    "M&A": "併購",
+    "IPO": "IPO",
+    "bond_issue": "債券發行",
+    "financing": "融資",
+    "other": "其他",
+    "report_category": "報告類別",
+    "report_categoryPlaceholder": "請選擇報告類別",
+    "trend_analysis": "行業趨勢分析",
+    "financial_analysis": "行業財務分析",
+    "valuation_analysis": "行業估值分析",
+    "peer_comparison": "同業比較",
+    "report_language": "分析報告語言",
+    "report_languagePlaceholder": "請選擇分析報告使用的語言",
+    "details": "追加資訊",
+    "detailsPlaceholder": "指定分析方向或補充更多資訊",
+    "startAnalysis": "開始分析",
+    "reset": "清空",
+    "additionalAnalysis": "追加分析",
+    "previousInfo": "過往分析",
+    "enterpriseAnalysis": "個案分析",
+    "handle_enterprise_analysis": "進行個案分析",
+    "analysisPreview": "AI投資銀行報告預覽",
+    "valuation_report": "估值報告"
   }
 }

@@ -9,46 +9,68 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
-  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
   useSidebar,
+  SidebarHeader,
 } from "@/components/ui/sidebar";
 
 import {
-  AiOutlineHome,
   AiOutlineSolution,
   AiOutlineFileSearch,
   AiOutlineSetting,
   AiFillCaretRight,
+  AiOutlineFolderOpen,
+  AiOutlineFileProtect,
+  AiOutlineFileSync,
 } from "react-icons/ai";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
 const anchors = [
   {
-    id: "home",
-    icon: AiOutlineHome,
-    href: "/",
+    id: "ipo-analysis",
+    icon: AiOutlineFileProtect,
+    href: "/feature/demo",
+    disabled: false,
   },
   {
-    id: "guide",
+    id: "financing-analysis",
+    icon: AiOutlineFileSync,
+    href: "/feature/demo",
+    disabled: true,
+  },
+  {
+    id: "M&A-analysis",
+    icon: AiOutlineFileSearch,
+    href: "/feature/demo",
+    disabled: true,
+  },
+  // {
+  //   id: "guide",
+  //   icon: AiOutlineSolution,
+  //   disabled: true,
+  //   href: "/guide",
+  // },
+  {
+    id: "history",
+    icon: AiOutlineFolderOpen,
+    disabled: true,
+    href: "/history",
+  },
+  {
+    id: "custom-analysis",
     icon: AiOutlineSolution,
     disabled: true,
-    href: "/guide",
+    href: "/custom-analysis",
   },
   {
-    id: "filesSearch",
-    icon: AiOutlineFileSearch,
-    disabled: true,
-    href: "/files-search",
-  },
-  {
-    id: "settings",
+    id: "system-settings",
     icon: AiOutlineSetting,
     disabled: true,
-    href: "/settings",
+    href: "/system-settings",
   },
 ];
 
@@ -59,10 +81,26 @@ export default function AppSidebar() {
 
   return (
     <Sidebar variant="floating" collapsible="icon">
-      {/* <SidebarHeader /> */}
+      <SidebarHeader
+        className={cn(
+          "flex items-center justify-center transition-all",
+          open ? "my-2" : "my-0"
+        )}
+      >
+        <Image src="/images/logo.png" alt="logo" width={150} height={100} />
+        {open && (
+          <div className="text-center">
+            <h1 className="text-xl font-bold tracking-wider text-[#d8931c]">
+              廷豐金融科技
+            </h1>
+            <h1 className="text-lg font-bold tracking-wider text-[#d8931c]">
+              GRAND EMPIRE
+            </h1>
+          </div>
+        )}
+      </SidebarHeader>
       <SidebarContent className="text-white">
         <SidebarGroup>
-          <SidebarGroupLabel>{t("nav.application")}</SidebarGroupLabel>
           <SidebarMenu>
             {anchors.map(anchor => (
               <SidebarMenuItem key={anchor.id}>
@@ -74,11 +112,17 @@ export default function AppSidebar() {
                   <Link
                     href={anchor.disabled ? "" : `/${lng}${anchor.href}`}
                     className={cn(
+                      "transition-all",
                       anchor.disabled && "cursor-not-allowed opacity-50"
                     )}
                   >
                     <anchor.icon />
-                    <p className="group-data-[collapsible=icon]:hidden">
+                    <p
+                      className={cn(
+                        "text-base font-semibold",
+                        open ? "" : "opacity-0"
+                      )}
+                    >
                       {t(`nav.${anchor.id}`)}
                     </p>
                   </Link>

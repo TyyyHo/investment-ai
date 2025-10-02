@@ -1,4 +1,4 @@
-import { SidebarProvider } from "@/components/ui/sidebar";
+import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import AppSidebar from "./components/sidebar";
 
 type LayoutProps = {
@@ -8,9 +8,11 @@ type LayoutProps = {
 export default function FeatureLayout({ children }: LayoutProps) {
   return (
     <div className="h-screen w-screen">
-      <SidebarProvider>
+      <SidebarProvider className="size-full overflow-hidden">
         <AppSidebar />
-        {children}
+        <SidebarInset className="size-full bg-transparent p-2">
+          {children}
+        </SidebarInset>
       </SidebarProvider>
     </div>
   );
