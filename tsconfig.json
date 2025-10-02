@@ -29,5 +29,11 @@
     }
   },
   "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts"],
-  "exclude": ["node_modules", ".next", "jest.config.js", "components/ui/*"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "jest.config.js",
+    "components/ui/*",
+    "public"
+  ]
 }

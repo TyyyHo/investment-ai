@@ -17,11 +17,13 @@ import {
 } from "@/components/ui/sidebar";
 
 import {
-  AiOutlineHome,
   AiOutlineSolution,
   AiOutlineFileSearch,
   AiOutlineSetting,
   AiFillCaretRight,
+  AiOutlineFolderOpen,
+  AiOutlineFileProtect,
+  AiOutlineFileSync,
 } from "react-icons/ai";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
@@ -30,19 +32,19 @@ import Image from "next/image";
 const anchors = [
   {
     id: "ipo-analysis",
-    icon: AiOutlineHome,
+    icon: AiOutlineFileProtect,
     href: "/feature/demo",
     disabled: false,
   },
   {
-    id: "M&A-analysis",
-    icon: AiOutlineHome,
+    id: "financing-analysis",
+    icon: AiOutlineFileSync,
     href: "/feature/demo",
     disabled: true,
   },
   {
-    id: "financing-analysis",
-    icon: AiOutlineHome,
+    id: "M&A-analysis",
+    icon: AiOutlineFileSearch,
     href: "/feature/demo",
     disabled: true,
   },
@@ -54,15 +56,15 @@ const anchors = [
   // },
   {
     id: "history",
-    icon: AiOutlineFileSearch,
+    icon: AiOutlineFolderOpen,
     disabled: true,
     href: "/history",
   },
   {
-    id: "personal-settings",
+    id: "custom-analysis",
     icon: AiOutlineSolution,
     disabled: true,
-    href: "/personal-settings",
+    href: "/custom-analysis",
   },
   {
     id: "system-settings",
@@ -86,6 +88,16 @@ export default function AppSidebar() {
         )}
       >
         <Image src="/images/logo.png" alt="logo" width={150} height={100} />
+        {open && (
+          <div className="text-center">
+            <h1 className="text-xl font-bold tracking-wider text-[#d8931c]">
+              廷豐金融科技
+            </h1>
+            <h1 className="text-lg font-bold tracking-wider text-[#d8931c]">
+              GRAND EMPIRE
+            </h1>
+          </div>
+        )}
       </SidebarHeader>
       <SidebarContent className="text-white">
         <SidebarGroup>
