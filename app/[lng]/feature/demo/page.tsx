@@ -6,6 +6,8 @@ import NewAnalysis from "./components/new-analysis";
 import Step2 from "./components/step2";
 import Step3 from "./components/step3";
 
+import PDFReader from "./components/pdfReader";
+
 export default function DemoPage() {
   const [step, setStep] = useState(1);
 
@@ -19,6 +21,8 @@ export default function DemoPage() {
       <section className="flex-1 rounded-2xl border-1 border-white/60 bg-neutral-800/60 backdrop-blur-md">
         <div className="min-h-64 w-full p-8 text-white">
           <h1 className="text-2xl font-bold">AI投資銀行報告預覽</h1>
+
+          <PDFReader />
         </div>
       </section>
     </div>
