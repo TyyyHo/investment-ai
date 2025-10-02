@@ -40,7 +40,12 @@ export default function Step2({ setStep }: Step2Props) {
     <>
       <Card className="border-white/60 bg-neutral-800/60 text-white backdrop-blur-md">
         <CardContent>
-          <Accordion type="single" collapsible className="text-white">
+          <Accordion
+            type="single"
+            collapsible
+            defaultValue="item-1"
+            className="text-white"
+          >
             <AccordionItem value="item-1">
               <AccordionTrigger className="border-none outline-none">
                 <CardTitle className="text-xl">

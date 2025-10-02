@@ -93,8 +93,13 @@ export default function Step3({ setStep }: Step3Props) {
       {/* 企業分析歷史紀錄 */}
       <Card className="border-white/60 bg-neutral-800/60 text-white backdrop-blur-md">
         <CardContent>
-          <Accordion type="single" collapsible className="text-white">
-            <AccordionItem value="item-1">
+          <Accordion
+            type="single"
+            collapsible
+            defaultValue="item-enterpriseAnalysis"
+            className="text-white"
+          >
+            <AccordionItem value="item-enterpriseAnalysis">
               <AccordionTrigger className="border-none outline-none">
                 <CardTitle className="text-xl">
                   {t("enterpriseAnalysis")}
