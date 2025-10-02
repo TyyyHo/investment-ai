@@ -66,7 +66,7 @@ export default function PdfViewer({
         error={<div className="text-red-600">{error}</div>}
       >
         {numPages > 0 ? (
-          <div className="flex w-full flex-col justify-center gap-2">
+          <div className="flex w-full flex-col justify-center gap-4">
             {/* Flipbook wraps each Page as a separate sheet */}
             <HTMLFlipBook
               className="shadow-lg"
@@ -114,7 +114,7 @@ export default function PdfViewer({
 
             <div className="flex w-full gap-2">
               <Drawer>
-                <DrawerTrigger className="rounded-md bg-neutral-700 px-4 py-2 text-sm hover:bg-neutral-600">
+                <DrawerTrigger className="rounded-md bg-neutral-700 px-4 py-2 text-sm shadow-lg hover:bg-neutral-600">
                   放大檢視
                 </DrawerTrigger>
                 <DrawerContent className="bg-neutral-800">
@@ -174,13 +174,13 @@ export default function PdfViewer({
               </Drawer>
 
               <Button
-                className="bg-neutral-700 hover:bg-neutral-600"
+                className="bg-neutral-700 shadow-lg hover:bg-neutral-600"
                 onClick={() => window.open(pdfUrl, "_blank")}
               >
                 分頁檢視
               </Button>
               <a href={pdfUrl} download>
-                <Button className="bg-neutral-700 hover:bg-neutral-600">
+                <Button className="bg-neutral-700 shadow-lg hover:bg-neutral-600">
                   下載 PDF
                 </Button>
               </a>
