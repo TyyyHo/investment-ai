@@ -61,7 +61,7 @@ export default function Step1({ setStep }: Step1Props) {
           <AccordionItem value="item-1">
             <AccordionTrigger className="border-none outline-none">
               <CardTitle className="text-xl">
-                {t("handle_industry_analysis")}
+                {t("industry_analysis")}
               </CardTitle>
             </AccordionTrigger>
 
