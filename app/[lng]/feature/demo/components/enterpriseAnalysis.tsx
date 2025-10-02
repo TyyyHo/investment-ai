@@ -43,7 +43,7 @@ export default function EnterpriseAnalysis({
           {/* 分析標的 */}
           <div className="flex flex-col gap-2">
             <Label htmlFor="target">{t("target")}</Label>
-            <h2 className="font-bold">2330 TSMC</h2>
+            <h2 className="font-bold">{process.env.NEXT_PUBLIC_DEMO_TARGET}</h2>
           </div>
 
           {/* 追加資訊 */}

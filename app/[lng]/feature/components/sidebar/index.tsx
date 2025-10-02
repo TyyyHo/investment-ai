@@ -32,6 +32,19 @@ const anchors = [
     id: "ipo-analysis",
     icon: AiOutlineHome,
     href: "/feature/demo",
+    disabled: false,
+  },
+  {
+    id: "M&A-analysis",
+    icon: AiOutlineHome,
+    href: "/feature/demo",
+    disabled: true,
+  },
+  {
+    id: "financing-analysis",
+    icon: AiOutlineHome,
+    href: "/feature/demo",
+    disabled: true,
   },
   // {
   //   id: "guide",
