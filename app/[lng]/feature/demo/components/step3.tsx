@@ -49,10 +49,10 @@ export default function Step3({
     <>
       <Card
         className={cn(
-          "bg-neutral-800/60 text-white backdrop-blur-md",
+          "text-white backdrop-blur-md",
           currentReport === "industry"
-            ? "border-2 border-orange-300"
-            : "border-white/60"
+            ? "border-2 border-orange-300 bg-neutral-800/90"
+            : "border-white/60 bg-neutral-800/60"
         )}
         onClick={() => setCurrentReport("industry")}
       >
@@ -111,10 +111,10 @@ export default function Step3({
       {/* 企業分析歷史紀錄 */}
       <Card
         className={cn(
-          "bg-neutral-800/60 text-white backdrop-blur-md",
+          "text-white backdrop-blur-md",
           currentReport === "price"
-            ? "border-2 border-orange-300"
-            : "border-white/60"
+            ? "border-2 border-orange-300 bg-neutral-800/90"
+            : "border-white/60 bg-neutral-800/60"
         )}
         onClick={() => setCurrentReport("price")}
       >
