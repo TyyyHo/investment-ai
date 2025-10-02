@@ -7,7 +7,7 @@ export default function ReportIndustry() {
     <>
       <h1 className="text-2xl font-bold">行業分析報告</h1>
 
-      <PdfViewer pdfUrl="/assets/industry.pdf" width={400} height={550} />
+      <PdfViewer pdfUrl="/assets/industry.pdf" width={400} height={515} />
     </>
   );
 }

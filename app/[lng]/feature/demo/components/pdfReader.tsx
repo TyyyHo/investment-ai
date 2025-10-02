@@ -114,10 +114,10 @@ export default function PdfViewer({
 
             <div className="flex w-full gap-2">
               <Drawer>
-                <DrawerTrigger className="rounded-md bg-sky-700 px-4 py-2 text-sm hover:bg-sky-600">
+                <DrawerTrigger className="rounded-md bg-neutral-700 px-4 py-2 text-sm hover:bg-neutral-600">
                   放大檢視
                 </DrawerTrigger>
-                <DrawerContent className="bg-neutral-300">
+                <DrawerContent className="bg-neutral-800">
                   <DrawerHeader>
                     <DrawerDescription className="flex w-full items-center justify-center">
                       <HTMLFlipBook
@@ -174,14 +174,14 @@ export default function PdfViewer({
               </Drawer>
 
               <Button
-                className="bg-sky-700 hover:bg-sky-600"
+                className="bg-neutral-700 hover:bg-neutral-600"
                 onClick={() => window.open(pdfUrl, "_blank")}
               >
                 分頁檢視
               </Button>
               <a href={pdfUrl} download>
-                <Button className="bg-sky-700 hover:bg-sky-600">
-                  Download PDF
+                <Button className="bg-neutral-700 hover:bg-neutral-600">
+                  下載 PDF
                 </Button>
               </a>
             </div>
