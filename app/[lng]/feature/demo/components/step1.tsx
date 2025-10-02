@@ -66,7 +66,10 @@ export default function Step1({ setStep }: Step1Props) {
             </AccordionTrigger>
 
             <AccordionContent>
-              <form className="grid gap-6" onSubmit={e => e.preventDefault()}>
+              <form
+                className="grid gap-6 text-base"
+                onSubmit={e => e.preventDefault()}
+              >
                 {/* 分析類別 */}
                 <div className="flex flex-col gap-2 md:col-span-2">
                   <Label htmlFor="category">{t("analysis_category")}</Label>

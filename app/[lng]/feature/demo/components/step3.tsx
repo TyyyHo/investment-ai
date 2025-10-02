@@ -68,7 +68,7 @@ export default function Step3({
               <AccordionContent>
                 <CardContent>
                   <form
-                    className="grid gap-6"
+                    className="grid gap-6 text-base"
                     onSubmit={e => e.preventDefault()}
                   >
                     {/* 分析類別 */}
@@ -135,7 +135,7 @@ export default function Step3({
               <AccordionContent>
                 <CardContent>
                   <form
-                    className="grid gap-6"
+                    className="grid gap-6 text-base"
                     onSubmit={e => e.preventDefault()}
                   >
                     {/* 分析類別 */}

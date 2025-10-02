@@ -58,7 +58,7 @@ export default function Step2({ setStep, setCurrentReport }: Step2Props) {
               <AccordionContent>
                 <CardContent>
                   <form
-                    className="grid gap-6"
+                    className="grid gap-6 text-base"
                     onSubmit={e => e.preventDefault()}
                   >
                     {/* 分析類別 */}

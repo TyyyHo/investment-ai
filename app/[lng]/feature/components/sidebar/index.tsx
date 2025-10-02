@@ -84,18 +84,21 @@ export default function AppSidebar() {
       <SidebarHeader
         className={cn(
           "flex items-center justify-center transition-all",
-          open ? "my-2" : "my-0"
+          open ? "mt-1.5" : "my-0"
         )}
       >
         <Image src="/images/logo.png" alt="logo" width={150} height={100} />
         {open && (
           <div className="text-center">
-            <h1 className="text-xl font-bold tracking-wider text-[#d8931c]">
+            <h1 className="text-lg font-bold tracking-wider text-[#d8931c]">
               廷豐金融科技
             </h1>
-            <h1 className="text-lg font-bold tracking-wider text-[#d8931c]">
+            <h1 className="text-sm font-bold tracking-wider text-[#d8931c]">
               GRAND EMPIRE
             </h1>
+            <p className="mb-2 text-xl font-semibold text-[#0088a6] text-shadow-md">
+              AI 投資銀行機器人
+            </p>
           </div>
         )}
       </SidebarHeader>

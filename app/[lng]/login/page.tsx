@@ -34,11 +34,15 @@ export default function LoginPage() {
 
           {/* Brand */}
           <div className="mb-6 text-center">
-            <h1 className="mb-1 text-2xl font-bold tracking-wider text-yellow-600">
+            <h1 className="text-xl font-bold tracking-wider text-[#d8931c]">
+              廷豐金融科技
+            </h1>
+            <h1 className="mb-2 text-lg font-bold tracking-wider text-[#d8931c]">
               GRAND EMPIRE
             </h1>
-            {/* <p className="text-sm text-yellow-600/80 mb-3">Beyond Grand</p> */}
-            <p className="mb-2 text-base text-slate-800">AI 投資銀行機器人</p>
+            <p className="mb-2 text-2xl font-semibold text-[#0088a6]">
+              AI 投資銀行機器人
+            </p>
           </div>
 
           {/* Login Form */}
