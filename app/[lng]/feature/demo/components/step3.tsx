@@ -11,7 +11,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useParams } from "next/navigation";
 import EnterpriseAnalysis from "./enterpriseAnalysis";
 import { defaultReportCategories } from "../instant";
 import { reportType } from "../page";
@@ -29,7 +28,6 @@ export default function Step3({
   currentReport,
   setCurrentReport,
 }: Step3Props) {
-  const { lng } = useParams<{ lng: string }>();
   const t = useTranslations("request");
   const tl = useTranslations("language");
   const [wantAnalysis, setWantAnalysis] = useState(false);
@@ -98,7 +96,7 @@ export default function Step3({
                     {/* 報告語言 */}
                     <div className="flex flex-col gap-2 md:col-span-2">
                       <Label>{t("report_language")}</Label>
-                      <p>{tl(lng)}</p>
+                      <p>{tl("en")}</p>
                     </div>
                   </form>
                 </CardContent>
@@ -162,7 +160,7 @@ export default function Step3({
                     {/* 報告語言 */}
                     <div className="flex flex-col gap-2 md:col-span-2">
                       <Label>{t("report_language")}</Label>
-                      <p>{tl(lng)}</p>
+                      <p>{tl("en")}</p>
                     </div>
                   </form>
                 </CardContent>

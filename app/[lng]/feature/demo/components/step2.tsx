@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useParams } from "next/navigation";
 
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -23,7 +22,6 @@ type Step2Props = {
 };
 
 export default function Step2({ setStep, setCurrentReport }: Step2Props) {
-  const { lng } = useParams<{ lng: string }>();
   const t = useTranslations("request");
   const tl = useTranslations("language");
   const [reportCategories, setReportCategories] = useState(
@@ -88,7 +86,7 @@ export default function Step2({ setStep, setCurrentReport }: Step2Props) {
                     {/* 報告語言 */}
                     <div className="flex flex-col gap-2 md:col-span-2">
                       <Label>{t("report_language")}</Label>
-                      <p>{tl(lng)}</p>
+                      <p>{tl("en")}</p>
                     </div>
                   </form>
                 </CardContent>
